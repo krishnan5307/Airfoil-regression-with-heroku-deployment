@@ -1,0 +1,12 @@
+flask
+flask-cors
+pandas
+numpy
+flask
+scikit-learn == 1.0.2
+matplotlib
+gunicorn
+Jinja2
+Werkzeug
+
+   
