@@ -7,7 +7,6 @@ app=Flask(__name__)
 model=pickle.load(open('tree_regressor_model.pkl','rb'))
 @app.route('/')
 def home():
-    #return 'Hello World'
     return render_template('home.html')
 
 @app.route('/predict_api',methods=['POST'])
