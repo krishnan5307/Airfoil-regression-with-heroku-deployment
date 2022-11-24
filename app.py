@@ -4,7 +4,7 @@ import numpy as np
 import pandas as pd
 
 app=Flask(__name__)
-model=pickle.load(open('tree_regressor_model.pkl','rb'))
+model=pickle.load(open('random_forest_model.pkl','rb'))
 @app.route('/')
 def home():
     return render_template('home.html')
