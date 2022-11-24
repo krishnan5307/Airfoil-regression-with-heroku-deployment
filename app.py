@@ -14,16 +14,16 @@ def home():
 def predict_api():
 
     data=request.json['data']
-    print(data)
-    new_data=[list(data.values())]
+    print(data)                           ## values will be in json- dictionary format, so we need to use .values() to fetch data
+    new_data=[list(data.values())]        ## converting to 2-D list or dataframe
     output=model.predict(new_data)[0]
     return jsonify(output)
 
-@app.route('/predict',methods=['POST'])
+@app.route('/predict',methods=['POST'])            ## predict should be same as in Html page form action
 def predict():
 
-    data=[float(x) for x in request.form.values()]
-    final_features = [np.array(data)]
+    data=[float(x) for x in request.form.values()]                  ## converting to list and float value in order of features  ## from.values will fetch all input data from html form
+    final_features = [np.array(data)]                                ## converting to 2-D list or dataframe
     print(data)
     
     output=model.predict(final_features)[0]
